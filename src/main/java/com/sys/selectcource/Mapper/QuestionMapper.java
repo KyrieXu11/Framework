@@ -24,8 +24,8 @@ public interface QuestionMapper extends QuestionDao {
     boolean deleteByID(@Param(value = "id") Integer id);
 
     @Override
-    @Update("update question where id=#{id}")
-    boolean updateByID(@Param(value = "id") Integer id);
+    @Update("update question set title=#{question.title} where id=#{id}")
+    boolean updateByID(@Param(value = "id") Integer id,Question question);
 
     @Override
     @Select("select * from question where id=#{id}")

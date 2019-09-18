@@ -9,6 +9,6 @@ public interface QuestionDao {
     boolean insertQuestion(Question question);
     List<Question> selectAll();
     boolean deleteByID(Integer id);
-    boolean updateByID(Integer id);
+    boolean updateByID(Integer id,Question question);
     Optional<Question> selectByID(Integer id);
 }

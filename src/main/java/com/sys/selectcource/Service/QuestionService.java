@@ -35,7 +35,7 @@ public class QuestionService {
         return questionDao.deleteByID(id);
     }
 
-    public boolean updateQuestionByID(Integer id){
-        return questionDao.updateByID(id);
+    public boolean updateQuestionByID(Integer id,Question question){
+        return questionDao.updateByID(id,question);
     }
 }

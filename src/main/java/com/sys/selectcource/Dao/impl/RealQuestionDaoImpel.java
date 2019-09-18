@@ -32,8 +32,8 @@ public class RealQuestionDaoImpel implements QuestionDao {
     }
 
     @Override
-    public boolean updateByID(Integer id) {
-        return questionMapper.updateByID(id);
+    public boolean updateByID(Integer id,Question question) {
+        return questionMapper.updateByID(id,question);
     }
 
     @Override

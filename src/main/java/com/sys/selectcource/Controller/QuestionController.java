@@ -43,7 +43,7 @@ public class QuestionController {
 
     @PutMapping(path = "{id}")
     public boolean updateQuestionByID(@PathVariable("id") Integer id,@Valid @NonNull @RequestBody Question question){
-        return realQuestionService.updateQuestionByID(id);
+        return realQuestionService.updateQuestionByID(id,question);
     }
 
 }
