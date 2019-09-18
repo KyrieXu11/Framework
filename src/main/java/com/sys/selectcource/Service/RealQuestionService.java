@@ -10,12 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class QuestionService {
-
+public class RealQuestionService {
     private final QuestionDao questionDao;
 
     @Autowired
-    public QuestionService(@Qualifier("mysql") QuestionDao questionDao) {
+    public RealQuestionService(@Qualifier("mysql") QuestionDao questionDao) {
         this.questionDao = questionDao;
     }
 

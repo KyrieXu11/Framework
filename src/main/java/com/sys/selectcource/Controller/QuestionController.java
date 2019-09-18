@@ -1,6 +1,7 @@
 package com.sys.selectcource.Controller;
 
 import com.sys.selectcource.Service.QuestionService;
+import com.sys.selectcource.Service.RealQuestionService;
 import com.sys.selectcource.enities.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -13,36 +14,36 @@ import java.util.Optional;
 @RestController
 public class QuestionController {
 
-    private final QuestionService questionService;
+    private final RealQuestionService realQuestionService;
 
     @Autowired
-    public QuestionController(QuestionService questionService) {
-        this.questionService = questionService;
+    public QuestionController(RealQuestionService realQuestionService) {
+        this.realQuestionService = realQuestionService;
     }
 
     @PostMapping
     public void addQuestion(@Valid @NonNull @RequestBody Question question){
-        questionService.addQuestion(question);
+        realQuestionService.addQuestion(question);
     }
 
     @GetMapping
     public List<Question> getAllQuestion(){
-        return questionService.getAllQuestion();
+        return realQuestionService.getAllQuestion();
     }
 
     @GetMapping("{id}")
     public Optional<Question> getQuestionByID(@PathVariable(value = "id") Integer id){
-        return questionService.getQuestionByID(id);
+        return realQuestionService.getQuestionByID(id);
     }
 
     @DeleteMapping(path = "{id}")
     public boolean deleteByQuestionID(@PathVariable("id") Integer id){
-        return questionService.deleteByQuestionID(id);
+        return realQuestionService.deleteByQuestionID(id);
     }
 
     @PutMapping(path = "{id}")
     public boolean updateQuestionByID(@PathVariable("id") Integer id,@Valid @NonNull @RequestBody Question question){
-        return questionService.updateQuestionByID(id,question);
+        return realQuestionService.updateQuestionByID(id);
     }
 
 }
