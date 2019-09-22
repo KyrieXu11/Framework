@@ -12,9 +12,12 @@ import java.util.Optional;
 @Repository("mysql")
 public class RealQuestionDaoImpel implements QuestionDao {
 
-    @Autowired
-    private QuestionMapper questionMapper;
+    private final QuestionMapper questionMapper;
 
+    @Autowired
+    public RealQuestionDaoImpel(QuestionMapper questionMapper) {
+        this.questionMapper = questionMapper;
+    }
 
     @Override
     public boolean insertQuestion(Question question) {

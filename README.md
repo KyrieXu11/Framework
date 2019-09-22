@@ -37,3 +37,14 @@
 2. `@RestController`它有两层含义：
    * 作为控制器注入到Spring上下文环境。
    * 请求响应为数据序列化（默认序列化方式是JSON），而不是跳转到html或模板页面。
+
+
+
+### @HttpMessageConverter的作用：
+
+1. 将服务器端返回的对象序列化成`Json`格式的数据
+2. 将前端返回的`Json`数据反序列成JAVA对象
+
+SpringMVC自动配置了`Jackson`和`Gson`的`HttpMessageConverter`，springboot进行了自动化配置，操作`Json`离不开`HttpMessageConverter`
+
+因为`@ConditionalOnMissBean`的注解的关系，如果没有自动配置`HttpMessageConverter`的话，将会自动采用springboot自动化配置的`HttpMessageConverter`。
