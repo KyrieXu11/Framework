@@ -10,14 +10,9 @@ import javax.persistence.Id;
 @Data
 @Entity(name = "book")
 public class Book {
-
 //    设置主键，并且自增
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-
+    private Integer bookid;
     private String name;
-
-
 }

@@ -12,7 +12,7 @@ public interface QuestionMapper extends QuestionDao {
 
 
     @Override
-    @Insert("insert into question(id,title) values(#{id},#{title})")
+    @Insert("insert into question(bookid,title) values(#{bookid},#{title})")
     boolean insertQuestion(Question question);
 
     @Override
@@ -20,14 +20,14 @@ public interface QuestionMapper extends QuestionDao {
     List<Question> selectAll();
 
     @Override
-    @Delete("delete from question where id=#{id}")
+    @Delete("delete from question where bookid=#{bookid}")
     boolean deleteByID(@Param(value = "id") Integer id);
 
     @Override
-    @Update("update question set title=#{question.title} where id=#{id}")
+    @Update("update question set title=#{question.title} where bookid=#{bookid}")
     boolean updateByID(@Param(value = "id") Integer id,Question question);
 
     @Override
-    @Select("select * from question where id=#{id}")
+    @Select("select * from question where bookid=#{bookid}")
     Optional<Question> selectByID(@Param(value = "id") Integer id);
 }

@@ -44,5 +44,4 @@ public class QuestionController {
     public boolean updateQuestionByID(@PathVariable("id") Integer id,@Valid @NonNull @RequestBody Question question){
         return realQuestionService.updateQuestionByID(id,question);
     }
-
 }
